@@ -1,0 +1,562 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;600&display=swap");
+
+:root {
+  --myFontFamily: Helvetica, sans-serif;
+  --dark: black;
+  --light: white;
+  --primary: #cc4142;
+  --background: #e8edf1;
+  --cellBorderRadius: 15px;
+  --boxShadowSettings: 5px 10px 30px -15px var(--dark);
+}
+
+body {
+  background-color: var(--background);
+  overflow: auto;
+}
+
+.quizPageWrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  min-height: 650px;
+}
+
+.quizHeader {
+  font-family: var(--myFontFamily);
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  font-weight: 600;
+  font-size: 40px;
+  text-align: center;
+}
+
+.leftChatPage {
+  width: 370px;
+  overflow-y: scroll;
+  height: 90vh;
+  min-height: 650px;
+  background-color: var(--primary);
+  margin: 0;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  flex-shrink: 0;
+}
+
+.rightChatPage {
+  min-height: 90vh;
+  width: calc(100% - 370px);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  overflow-y: auto;
+  height: 90vh;
+  min-height: 650px;
+}
+
+.rightChatPageContent {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: flex-start;
+  height: 100%;
+  position: relative
+}
+
+.showHideMobile {
+  display: none;
+}
+
+.question {
+  background-color: var(--light);
+  padding: 20px;
+  border-radius: 15px;
+  width: 650px;
+  height: 650px;
+  animation: 1s questionFadeIn;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  box-shadow: 0px 5px 15px 5px rgba(128, 128, 128, 0.3);
+}
+
+@keyframes questionFadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  25% {
+    opacity: 0;
+  }
+
+  70% {
+    opacity: 1;
+  }
+}
+
+.redFlag {
+  background-color: var(--light);
+  animation: 2s questionFadeIn;
+}
+
+.redFlagHeading {
+  font-family: "Roboto Slab", serif;
+  color: var(--primary);
+  text-align: center;
+  font-size: 32px;
+}
+
+@media only screen and (max-width: 1150px) {
+  .question {
+    width: 450px;
+    height: 650px;
+  }
+}
+
+@media only screen and (max-width: 510px) {
+  .question {
+    width: 320px;
+    height: 520px;
+  }
+}
+
+.inputOption {
+  color: var(--dark);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  height: 100%;
+}
+
+.prev,
+.next {
+  padding: 10px;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+.next {
+  float: right;
+  background-color: var(--primary);
+  color: white;
+}
+
+.redFlag.next {
+  background-color: white;
+  color: var(--primary);
+}
+
+.prev {
+  background-color: var(--light);
+}
+
+@media only screen and (max-width: 875px) {
+  .rightChatPage {
+    width: 100vw;
+    position: relative;
+  }
+
+  .leftChatPage {
+    position: absolute;
+    z-index: 2;
+    width: 100%;
+    display: none;
+    height: 100%;
+    overflow-y: scroll;
+  }
+
+  .leftChatPage.isON {
+    display: flex;
+  }
+
+  body {
+    width: 100vw;
+    position: relative;
+  }
+
+  .showHideMobile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+
+    width: 40px;
+    height: 40px;
+    background-color: var(--primary);
+    z-index: 50;
+    margin-top: 10px;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    color: white;
+    font-size: 30px;
+    border: none;
+    right: 0px;
+  }
+
+  .showHideMobile .showHideMobileOn {
+    display: none;
+  }
+
+  .showHideMobile .showHideMobileOff {
+    display: block;
+  }
+
+  .showHideMobile.isON .showHideMobileOn {
+    display: block;
+  }
+
+  .showHideMobile.isON .showHideMobileOff {
+    display: none;
+  }
+}
+
+.leftQuestionLink {
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #a52828;
+  color: white;
+  border-radius: 10px;
+  padding: 10px;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  width: 90%;
+
+  flex-shrink: 0;
+}
+.leftQuestionLink.unanswered {
+  background-color: #8f3434;
+  color: #c3c3c3;
+}
+.leftQuestionLink:hover,
+.leftQuestionLink.active {
+  background-color: #3f0f0f;
+  cursor: pointer;
+}
+
+
+/*Popup for red flag*/
+.popup {
+  background-color: var(--primary);
+  position: absolute;
+  animation: ease 2s appear;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 15px;
+  z-index: 10;
+}
+
+.popup h2 {
+  opacity: 0;
+  animation: ease 2s fadeIn;
+  position: absolute;
+  z-index: 5;
+  color: white;
+  font-size: 50px;
+  text-align: center;
+}
+
+@keyframes fadeIn {
+  0% {
+    display: block;
+    opacity: 0;
+  }
+
+  25% {
+    display: block;
+    opacity: 0;
+  }
+  35% {
+    display: block;
+    opacity: 1;
+  }
+  70% {
+    display: block;
+    opacity: 1;
+  }
+  90% {
+    display: none;
+    opacity: 0;
+  }
+}
+@keyframes appear {
+  0% {
+    width: 0vw;
+    height: 0;
+  }
+  15% {
+    width: 650px;
+    height: 50px;
+  }
+
+  35% {
+    width: 650px;
+    height: 650px;
+  }
+
+  75% {
+    width: 650px;
+    height: 650px;
+  }
+  99% {
+    width: 650px;
+  }
+  100% {
+    width: 0px;
+    height: 0;
+  }
+}
+
+@media only screen and (max-width: 1150px) {
+  @keyframes appear {
+    0% {
+      width: 0vw;
+      height: 0;
+    }
+    25% {
+      width: 450px;
+      height: 650px;
+    }
+    75% {
+      width: 450px;
+      height: 650px;
+    }
+    100% {
+      width: 0;
+      height: 0;
+    }
+  }
+  .popup h2 {
+    font-size: 30px;
+  }
+}
+
+@media only screen and (max-width: 510px) {
+  @keyframes appear {
+    0% {
+      width: 0vw;
+      height: 0;
+    }
+    25% {
+      width: 320px;
+      height: 520px;
+    }
+    75% {
+      width: 320px;
+      height: 520px;
+    }
+    100% {
+      width: 0;
+      height: 0;
+    }
+  }
+  .popup h2 {
+    font-size: 20px;
+  }
+}
+
+.rightChatPage ul {
+  width: 100%;
+  padding-left: 0;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+  height: 80%;
+}
+
+.rightChatPage li {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.rightChatPage li label {
+  border: 1px solid grey;
+  border-radius: 20px;
+  width: 80%;
+  padding: 10px 0;
+  margin: 12px 0;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 510px) {
+  .rightChatPage li label {
+    padding: 8px 0;
+    margin: 5px;
+  }
+}
+
+input:checked + label {
+  background-color: var(--primary);
+  border: none;
+  color: white;
+  font-weight: bold;
+}
+
+input {
+  opacity: 0;
+  position: absolute;
+}
+
+.question h3 {
+  font-size: 28px;
+  background-color: rgb(243, 243, 253);
+  border-radius: 10px;
+  text-align: left;
+  padding: 10px;
+}
+
+@media only screen and (max-width: 510px) {
+  .question h3 {
+    font-size: 20px;
+    padding: 8px;
+  }
+}
+
+.formHolder {
+  height: 65%;
+}
+
+.formHolder button {
+  margin: 10px 0;
+  background: rgb(63, 94, 251);
+  background: linear-gradient(
+    90deg,
+    rgba(63, 94, 251, 1) 0%,
+    rgba(252, 70, 107, 1) 100%
+  );
+  color: white;
+  padding: 5px;
+  width: 200px;
+  font-size: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+/* not on a question */
+.noQuestions {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.noQuestions h2 {
+  font-size: 26px;
+  color: var(--dark);
+  font-family: sans-serif;
+  margin: 20px;
+}
+
+.cards {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.card {
+  width: 310px;
+  height: 470px;
+  background-color: white;
+  border-radius: 20px;
+  margin: 20px;
+  box-shadow: 0px 5px 15px 5px rgba(128, 128, 128, 0.3);
+}
+
+.card .icon {
+  width: 100%;
+  height: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card .icon svg {
+  width: 40%;
+  height: auto;
+  stroke: var(--primary);
+}
+
+.card h4 {
+  font-size: 24px;
+  color: var(--dark);
+  text-align: center;
+  padding: 10px;
+  font-family: sans-serif;
+}
+
+.card p {
+  font-family: sans-serif;
+  font-size: 18px;
+  color: var(--dark);
+  padding: 10px;
+}
+
+.start {
+  text-decoration: none;
+  padding: 15px;
+  color: white;
+  background-color: var(--primary);
+  font-size: 18px;
+  font-family: sans-serif;
+  border-radius: 20px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 10px;
+}
+
+/* card animation */
+.card1,
+.card2,
+.card3 {
+  opacity: 0;
+}
+
+.card1 {
+  animation: ease 0.75s fadeInCard 0s forwards;
+}
+
+.card2 {
+  animation: ease 0.75s fadeInCard 0.25s forwards;
+}
+
+.card3 {
+  animation: ease 0.75s fadeInCard 0.5s forwards;
+}
+
+@keyframes fadeInCard {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  25% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

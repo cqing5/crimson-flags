@@ -1,0 +1,435 @@
+/* fonts, etc. */
+:root {
+  --myFontFamily: Helvetica, sans-serif;
+  --dark: black;
+  --light: white;
+  --primary: #cc4142;
+  --cellBorderRadius: 15px;
+  --boxShadowSettings: 5px 10px 30px -15px var(--dark);
+}
+
+/* color and alignment*/
+body {
+  background-color: #e8edf1;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  overflow-x: hidden;
+}
+
+/* Profile section */
+.profilePageWrapper {
+  max-width: 1080px;
+  width: 95%;
+}
+
+.profileSection,
+.topSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.profileSection {
+  width: inherit;
+  max-width: inherit;
+}
+
+.profilePictureSection {
+  width: 150px;
+  height: 150px;
+  background-color: blue;
+  border-radius: 50%;
+  position: relative;
+  border-radius: 50%;
+}
+
+.verificationCheck {
+  width: 35px;
+  height: 35px;
+  background-color: var(--primary);
+  position: absolute;
+  bottom: 0;
+  border: 2px solid white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  right: 0;
+  border-radius: 50%;
+  color: white;
+
+}
+
+.profilePictureSection img {
+  width: inherit;
+  height: inherit;
+  border-radius: inherit;
+  object-fit: cover;
+}
+
+.topSection {
+  margin-top: 25px;
+}
+
+.middleSection {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 35px;
+  flex-wrap: wrap;
+}
+
+.middleSection-rightSection {
+  display: flex;
+}
+
+.profileName {
+  font-size: 32px;
+}
+
+.ageYear,
+.major {
+  font-size: 20px;
+  font-weight: 300;
+  text-transform:capitalize;
+}
+
+.verifyAccount,
+.editProfile,
+.reportProfile,
+.userPermissions,
+.makeBasicUserType,
+.reviewUser,
+.logout {
+  color: var(--primary);
+  margin: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 400;
+  text-decoration: none;
+}
+
+.biographyContent {
+  margin-top: 10px;
+  width: 100%;
+  background-color: var(--light);
+  border-radius: 15px;
+  box-shadow: 0px 10px 15px 5px rgba(128, 128, 128, 0.3);
+  margin-bottom: 50px;
+}
+
+.biographyWords {
+  padding: 10px;
+}
+
+.dividerLine {
+  width: 100%;
+  max-width: 980px;
+  height: 1px;
+  background-color: grey;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+/* review section */
+
+.reviewWords {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.reviews {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  border-radius: 15px;
+  margin-bottom: 25px;
+}
+
+.review {
+  width: 320px;
+  background-color: white;
+  display: flex;
+  margin-bottom: 20px;
+  margin-right: 20px;
+  border-radius: 15px;
+  align-items: flex-start;
+  box-shadow: var(--boxShadowSettings);
+}
+
+@media screen and (max-width: 1130px) {
+  .reviews {
+    width: 80%;
+    justify-content: space-between;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .review {
+    margin-right: 0;
+  }
+
+  .reviewWords {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+}
+
+@media screen and (max-width: 910px) {
+  .reviews {
+    width: 95%;
+    justify-content: space-between;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .reviewWords {
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+  
+}
+
+@media screen and (max-width: 750px) {
+  .reviews {
+    justify-content: center;
+  }
+}
+
+
+.leftReview {
+  width: 60px;
+  margin: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.reviewPicture {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: purple;
+}
+
+.reviewPicture a {
+  width: inherit;
+  height: inherit;
+  border-radius: inherit;
+}
+
+.reviewPicture a img {
+  width: inherit;
+  height: inherit;
+  border-radius: inherit;
+  object-fit: cover;
+}
+
+.rightReview {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  word-break:break-all;
+}
+
+.stars {
+  width: 60px;
+  height: 60px;
+  margin: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.stars svg {
+  width: 60px;
+  fill: var(--primary);
+  stroke: var(--primary);
+}
+
+.starNum {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* buttons */
+.edit-profile {
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+
+/* Modal Popup */
+.modal {
+  background: rgba(0, 0, 0, 0.6);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 10;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.25s ease-out;
+}
+
+.modal.open {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.modalContent {
+  position: absolute;
+  background-color: white;
+  max-width: 1000px;
+  min-height: 500px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.5);
+  transition: all 0.25s ease-out;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding: 30px;
+}
+
+.verifyTextInput {
+  width: 100%;
+  height: 3em;
+}
+
+@media (max-width: 1050px) {
+  .modalContent {
+    max-width: 700px;
+  
+  }
+}
+
+@media (max-width: 750px) {
+  .modalContent {
+    max-width: 500px;
+  
+  }
+}
+
+@media (max-width: 540px) {
+  .modalContent {
+    max-width: 400px;
+  
+  }
+}
+
+@media (max-width: 415px) {
+  .modalContent {
+    max-width: 315px;
+  
+  }
+}
+
+
+.modalContent form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+.modalContent h1 {
+  font-family: sans-serif;
+  font-size: 30px;
+  text-align: center;
+  color: #cc4142;
+  margin-top: 10px;
+}
+
+.modalContent p {
+  margin-bottom: 1em;
+}
+
+.modalContent textarea {
+  width: 100%;
+  height: 8em;
+  background-color: white;
+  border-radius: 10px;
+  padding: 5px;
+}
+
+/* .modalContent form input {
+
+} */
+.modalContent form label {
+  font-size: 18px;
+  font-family: sans-serif;
+  margin-left: 18px;
+  margin-bottom: 3px;
+  margin-top: 5px;
+}
+
+.modalContent form button {
+  padding: 5px;
+  font-size: 18px;
+  color: white;
+  background-color: #be2d2d;
+  border: none;
+  border-radius: 20px;
+  width: 40%;
+  margin-left: auto;
+  margin-right: auto;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.modalContent form button:hover {
+  background-color: #be2d2d;
+}
+
+.modal.open .modalContent {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.radioPair,
+.reviewBox {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.verificationCheck:hover {
+  cursor: pointer;
+}
+
+/* Tooltip text */
+.verificationCheck .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: var(--primary);
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+  border-radius: 6px;
+ 
+  /* Position the tooltip text - see examples below! */
+  position: absolute;
+  z-index: 1;
+  top: -5px;
+  left: 105%;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.verificationCheck:hover .tooltiptext {
+  visibility: visible;
+}

@@ -1,0 +1,85 @@
+body {
+
+    background-color: #e8edf1;
+  }
+  
+  main {
+    display: flex;
+    justify-content: center; 
+  }
+
+  .profilePageWrapper {
+    width: 100%;
+  }
+  
+  .profileSection,
+  .titleSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+    /* title and header styling */
+  .titleSection {
+    margin-top: 20px;
+  }
+  
+  .titleSection > h1 {
+    color: #cc4142;
+    font-family: Helvetica, sans-serif;
+  }
+  
+  .titleSection > p {
+    color: black;
+    font-family: Helvetica, sans-serif;
+    font-size: 18px;
+  }
+
+  p {
+      font-size: 18px;
+      font-family: Helvetica, sans-serif;
+  }
+
+
+  /* styling paragraphs */
+  .container {
+      padding-left: 80px;
+      padding-right: 80px;
+      margin: 0 auto;
+      font-size: 16px;
+      font-family: Helvetica, sans-serif;
+  }
+
+  /* styling h2 */
+
+  .color {
+    color: #cc4142;
+    font-family: Helvetica, sans-serif;
+    font-size: 10px;
+    margin-left: 0;
+  }
+
+  /* styling text area */
+
+  .textBox {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 15px;
+  }
+
+  textarea {
+    padding: 10px;
+    height: 8em;
+    border: none;
+    border-radius: 10px;
+    background-color: white;
+    font-size: 18px;
+  }
+
+  
+  .container2 {
+      padding-left: 50px;
+      
+  }

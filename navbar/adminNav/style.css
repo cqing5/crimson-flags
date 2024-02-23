@@ -1,0 +1,41 @@
+:root {
+  --primary: #cc4142;
+  --light: #ffffff;
+  --dark: #2a333a;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+#adminNav {
+  width: 100%;
+  background-color: var(--primary);
+  display: flex;
+  list-style-type: none;
+  justify-content: space-around;
+  flex-wrap: nowrap;
+  padding: 0;
+  height: auto;
+}
+
+#adminNav li {
+  border-radius: 10px;
+  background-color: #a52828;
+  margin: 7px 0;
+  color: white;
+  font-family: sans-serif;
+  cursor: pointer;
+  width: auto;
+  display: flex;
+}
+
+#adminNav li a{
+  padding: 7px 13px;
+  text-decoration: none;
+  color: white;
+}
+#adminNav li:hover {
+  background-color: #3f0f0f;
+}

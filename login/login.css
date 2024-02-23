@@ -1,0 +1,175 @@
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@200;400;600;800&display=swap');
+
+/* fonts, etc. */
+:root {
+  --myFontFamily: Helvetica, sans-serif;
+  --dark: black;
+  --light: white;
+  --primary: #cc4142;
+  --cellBorderRadius: 15px;
+  --boxShadowSettings: 5px 10px 30px -15px var(--dark);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+  
+  /* .background > h2 {
+    color: black;
+    font-size: 20px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+   */
+  
+  
+  
+  /* redo */
+  #login {
+    display: flex;
+    min-height: 100vh;
+    font-family: 'Sora', sans-serif;
+  }
+
+  .login__left {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  .login__left p {
+    font-weight: 600;
+    font-size: 24px;
+    margin-bottom: 1em;
+    padding: 0 1em;
+  }
+
+  h1 {
+    color: var(--primary);
+    font-size: 60px;
+    padding: 0 1em;
+  }
+  h2 {
+    text-align: left;
+    width: 100%;
+    font-size: 30px;
+    padding: 0 30px;
+    margin-bottom: 0.5em;
+  }
+
+  .login__right p{
+    width: 100%;
+    text-align: left;
+    font-size: 20px;
+    padding: 0 30px;
+    margin-bottom: 0.5em;
+  }
+
+  @media screen and (max-width:1300px) {
+    h1 {
+      font-size: 48px;
+    }
+    h2 {
+      font-size: 26px;
+    }
+    .login__left p {
+      font-size: 20px;
+    }
+    .login__right p{
+      font-size: 18px;
+    }
+
+    
+  }
+
+  @media screen and (max-width:900px) {
+    h1 {
+      font-size: 40px;
+    }
+    h2 {
+      font-size: 24px;
+    }
+    .login__left p {
+      font-size: 18px;
+    }
+    .login__right p{
+      font-size: 18px;
+    }
+  }
+
+  @media screen and (max-width:750px) {
+    h1 {
+      font-size: 34px;
+    }
+    h2 {
+      font-size: 22px;
+    }
+    .login__left p {
+      font-size: 16px;
+    }
+    .login__right p{
+      font-size: 16px;
+    }
+  }
+
+  .login-box {
+    margin-right: auto;
+  }
+  .login__left img {
+    width: 80%;
+    max-width: 800px;
+  }
+
+  .login__right img {
+    width: 200px;
+    margin-right: auto;
+  }
+
+  .login__right {
+    width: 40%;
+    background-color: var(--primary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .login-wrapper {
+    width: 80%;
+    background-color: white;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 15px;
+    min-height: 250px;
+    margin: 20px 0;
+  }
+
+  @media screen and (max-width: 1000px) {
+    .login__left {
+      width: 50%;
+    }
+    .login__right {
+      width: 50%;
+    }
+  }
+
+  
+  @media screen and (max-width: 650px) {
+    #login {
+      flex-direction: column;
+    }
+    .login__left {
+      width: 100%;
+      min-height: 40vh;
+    }
+    .login__right {
+      width: 100%;
+      min-height: 60vh;
+    }
+  }

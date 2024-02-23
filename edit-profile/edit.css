@@ -1,0 +1,151 @@
+/* fonts, etc. */
+:root {
+  --myFontFamily: Helvetica, sans-serif;
+  --dark: black;
+  --light: white;
+  --primary: #cc4142;
+  --cellBorderRadius: 15px;
+  --boxShadowSettings: 5px 10px 30px -15px var(--dark);
+}
+
+
+body {
+  background-color: #e8edf1;
+}
+  
+.profileWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.titleSection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 25px;
+}
+
+.titleSection h1 {
+  color: var(--primary);
+}
+
+.profilePictureSection {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background-color: white;
+  margin: 15px 0;
+}
+
+.profilePictureSection img {
+  width: inherit;
+  height: inherit;
+  border-radius: inherit;
+  object-fit: cover;
+}
+
+.userInformation {
+  width: 90%;
+  max-width: 900px;
+}
+
+.profileForm {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.item {
+  width: 48%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 15px;
+}
+
+.item label,
+.double-item label {
+  font-size: 18px;
+  margin-bottom: 4px;
+  font-weight: bold;
+}
+
+.item input,
+.item select {
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  background-color: white;
+  font-size: 18px;
+}
+
+@media (max-width: 760px) {
+  .item {
+    width: 100%;
+  }
+}
+
+.double-item {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 15px;
+}
+
+.bio {
+  padding: 10px;
+  height: 8em;
+  border: none;
+  border-radius: 10px;
+  background-color: white;
+  font-size: 18px;
+}
+
+.buttons {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.button-option {
+  width: 150px;
+  padding: 10px 20px; 
+  border: none;
+  border-radius: 15px;
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+
+}
+
+.cancel-btn {
+  background-color: white;
+  text-align: center;
+  color: black;
+  font-size: 18px;
+}
+
+.submit-btn {
+  background-color: var(--primary);
+  color: white;
+  font-size: 18px;
+}
+
+.error-msg{
+  font-size: 16px;
+  font-family: Helvetica, serif;
+  text-align: center;
+  color: var(--primary);
+  display: flex;
+  /* flex-direction: column; */
+  align-items: center;
+  /* justify-content: center; */
+}
