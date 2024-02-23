@@ -1,5 +1,3 @@
-# team-01
+# Crimson Flags: Roommate Finding Made Easy 
 
-This repository was automatically created from Canvas.
-
-https://cgi.luddy.indiana.edu/~team01/
+Watch the [Video Demo](https://youtu.be/M3-SDItZ8XQ?si=_DpmlFf7JqRFBHu9)!
